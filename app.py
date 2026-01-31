@@ -5,7 +5,7 @@ import pickle as pkl
 scaler = pkl.load(open('scaler.pkl', 'rb'))
 model = pkl.load(open('model.pkl', 'rb'))
 
-st.title("Diabetic Patient Prediction Project")
+st.title ("Diabetic Patient Prediction Project")
 
 gender = st.selectbox("Select Gender", ['Female', 'Male', 'Other'])
 age = st.number_input("Enter Age", min_value = 0, max_value = 100, value = 50)
@@ -51,6 +51,6 @@ if st.button("Predict"):
     data_scaled = scaler.transform(data)
     result = model.predict(data_scaled)
     if result[0] == 1:
-        st.error("Person in diabetic")
+        st.error("Person in Diabetic")
     else:
-        st.success("Person in not diabetic")
+        st.success("Person in not Diabetic")
